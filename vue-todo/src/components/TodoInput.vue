@@ -34,6 +34,7 @@ input:focus {
 }
 .inputBox {
   background: white;
+  width:100%;
   height: 50px;
   line-height: 50px;
   border-radius: 5px;
@@ -41,7 +42,7 @@ input:focus {
 .inputBox input {
   border-style: none;
   font-size: 0.9rem;
-  width:90%;
+  width:80%;
   height:40px;
 }
 .addContainer {
