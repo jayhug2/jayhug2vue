@@ -1,6 +1,6 @@
 <template>
   <div>
-      <ul>
+      <TransitionGroup tag="ul" name="fade" class="container">
         <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.item" class="shadow">
           <i class="checkBtn fas fa-check" v-bind:class="{checkBtnCompleted: !todoItem.completed}"
             v-on:click="toggleComplete(todoItem, index);"></i>
@@ -9,7 +9,7 @@
             <i class="fas fa-trash-alt"></i>
           </span>
         </li>
-      </ul>
+      </TransitionGroup>
   </div>
   
 </template>
@@ -62,5 +62,16 @@ li {
 .textCompleted {
   text-decoration: line-through;
   color: #b3adad;
+}
+
+/* fade */
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>
